@@ -1,0 +1,16 @@
+name: pycoroutines
+dependencies:
+  - python=2.7
+  - pip:
+    - numpy
+    - tabulate
+
+# conda env create
+# To activate this environment, use:
+# $ source activate pycoroutines
+
+# To deactivate this environment, use:
+# $ source deactivate
+
+# To update
+# $ source conda update
