@@ -1,6 +1,6 @@
 # Practice creating pipelines with coroutines
 
-1. Create a coroutine decorator to avoid having to prime each GeneratorExit:
+* Create a coroutine decorator to avoid having to prime each GeneratorExit:
 ```python
   # codecorator.py
   def coroutine(func):
@@ -11,7 +11,7 @@
     return start
 ```
 
-2. Create a few building blocks for a pipeline, including a  source, some intermediaries, and a sink. Branch out with a broadcaster:
+* Create a few building blocks for a pipeline, including a  source, some intermediaries, and a sink. Branch out with a broadcaster:
 ```python
   # copiping.py
 
@@ -24,7 +24,7 @@
         target.send(item)
 ```
 
-3. Test out a pipeline
+* Test out a pipeline
 ```python
   # serial.py
 
@@ -82,7 +82,7 @@
     bottom: 30
 ```
 
-4. Multi-thread the pipeline with a threaded coroutine pipeline member
+* Multi-thread the pipeline with a threaded coroutine pipeline member
 ```python
   # threaded.py
   @coroutine
@@ -136,7 +136,7 @@
   )
 ```
 
-4. replace print statements with an arbitrary system call to `echo 'IO bound call' >> /dev/null; sleep .01` and run some time tests on my macbook:
+* replace print statements with an arbitrary system call to `echo 'IO bound call' >> /dev/null; sleep .01` and run some time tests on my macbook:
 ```python
   # comparison.py
   ser_times =  timeit.repeat(ser, number=10)
