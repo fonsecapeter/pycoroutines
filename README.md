@@ -82,7 +82,7 @@
     bottom: 30
 ```
 
-4. Multi-thread the pipeline with a multi-threaded coroutine pipeline member
+4. Multi-thread the pipeline with a threaded coroutine pipeline member
 ```python
   # threaded.py
   @coroutine
@@ -105,7 +105,7 @@
       messages.put(GeneratorExit)
 
   # ...
-  
+
   source(
     range(10),
     broadcast([
@@ -135,4 +135,18 @@
     ])
   )
 ```
+
+4. replace print statements with an arbitrary system call to `echo 'IO bound call' >> /dev/null; sleep .01` and run some time tests on my macbook:
+```python
+  # comparison.py
+  ser_times =  timeit.repeat(ser, number=10)
+  thr_times =  timeit.repeat(thr, number=10)
+```
+```python
+#              avg        max        min
+  --------  --------  ---------  ---------
+  serial    4.12966   4.13732    4.12442
+  threaded  0.013469  0.0157881  0.0120649
+```
+
 > written wile reading http://www.dabeaz.com/coroutines/Coroutines.pdf
