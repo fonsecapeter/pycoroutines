@@ -1,6 +1,6 @@
 # Practice creating pipelines with coroutines
 
-* Create a coroutine decorator to avoid having to prime each GeneratorExit:
+* Create a coroutine decorator to avoid having to prime each generator:
 ```python
   # codecorator.py
   def coroutine(func):
