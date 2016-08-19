@@ -148,5 +148,6 @@
   serial    4.12966   4.13732    4.12442
   threaded  0.013469  0.0157881  0.0120649
 ```
+timeit must not be capturing the threads...
 
 > written wile reading http://www.dabeaz.com/coroutines/Coroutines.pdf
